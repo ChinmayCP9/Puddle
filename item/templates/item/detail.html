@@ -1,0 +1,22 @@
+{% extends 'core/base.html' %}
+{% block title %}
+    {{item.title}}
+{% endblock %}
+{% block content %}
+    <div class="grid grid-cols-5 gap-6">
+        <div class="col-span-3">
+            <img src="{{ item.image.url }}" alt="item">
+        </div>
+        <div class="col-span-2 p-6 bg-gray-100">
+            <h1 class="mb-6 text-3xl">{{item.name}}</h1>
+            <h1 class="mb-6 text-3xl">Price: {{item.price}}</h1>
+            <h1 class="mb-6 text-3xl">sold by: {{item.created_by}}</h1>
+            <h1 class="mb-6 text-3xl">Catagory: {{item.catagory}}</h1>
+            {% if item.description %}
+            <h1 class="mb-6 text-3xl">{{item.description}}</h1>
+            {% endif %}
+            <a class="block w-full text-lg text-slate-500 hover:file:bg-violet-100 mx-6 px-6" href="">Go Back</a>
+        </div>
+    </div>
+
+{% endblock %}
